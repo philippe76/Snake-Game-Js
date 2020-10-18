@@ -1,0 +1,61 @@
+body {
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+}
+
+#game {
+  border: 8px solid white;
+  width: 600px;
+  height: 600px;
+}
+
+.apple {
+  width: 20px;
+  height: 20px;
+  background: red;
+  position: relative;
+}
+
+.snake {
+  width: 20px;
+  height: 20px;
+  background: white;
+  position: relative;
+  display: inline-block;
+  margin: 0 0.1rem;
+  /* top: 0px; */
+  animation: var(--animation) 6s linear forwards;
+}
+
+.snakeDiv {
+  position: relative;
+  border: 1px solid white;
+  height: 20px;
+  display: flex;
+}
+
+@keyframes move {
+  0% {
+    top: var(--move_top_start);
+    left: var(--move_left_start);
+  }
+  100% {
+    top: var(--move_top_end);
+    left: var(--move_left_end);
+  }
+}
+
+@keyframes down {
+  0% {
+    /* left: var(--down_left_start); */
+    top: var(--down_top_start);
+  }
+  100% {
+    /* left: var(--down_left_end); */
+    top: var(--down_top_end);
+  }
+}
